@@ -1,7 +1,7 @@
 public class merge{
     /*sort the array from least to greatest value. This is a wrapper function*/
     public static void mergesort(int[]data){
-        int temp = new int[data.length];
+        int[] temp = new int[data.length];
         for(int i = 0; i < data.length; i++){
             temp[i] = data[i];
         }
@@ -16,9 +16,26 @@ public class merge{
         merge(data, lo, hi);
     }
     private static void merge(int[] data, int lo, int hi){
-        int yo = ((hi-1o)+2)/2;
-        int[] temp1 = new int[(hi-1o+2)/2];
-        int[] temp2 = new int[hi-1o+1-((hi-1o+2)/2)];
-
+        int yo = ((hi-lo)+2)/2;
+        int[] temp1 = new int[(hi-lo+2)/2];
+        int[] temp2 = new int[hi-lo+1-((hi-lo+2)/2)];
+        for(int i = 0; i < temp1.length; i++){
+            temp1[i] = data[lo+i];
+        }
+        for(int i = 0; i < temp2.length; i++){
+            temp2[i] = data[lo+temp1.length + i];
+        }
     }
+
+    public static void insertionSort(int[] data, int lo, int hi){
+        int orig;
+        for (int x = 1+lo; x < hi; x++){
+          orig = data[x];
+          for (int y = x; y > 0 && data[y] < data[y-1] ; y--){
+              data[y] = data[y-1];
+              data[y-1] = orig;
+          }
+        }
+    }
+
 }
