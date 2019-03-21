@@ -1,6 +1,16 @@
 public class merge{
     public static void main(String[] args) {
-
+        int[] test = new int[]{0,5,2,5,3,5,7,8,1};
+        mergesort(test);
+        for (int i: test){
+            System.out.print(i);
+        }
+        System.out.println();
+        test = new int[]{0,5,2,5,3,5,7,8,1};
+        insertionSort(test,1,6);
+        for (int i: test){
+            System.out.print(i);
+        }
     }
     /*sort the array from least to greatest value. This is a wrapper function*/
     public static void mergesort(int[]data){
