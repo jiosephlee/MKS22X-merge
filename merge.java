@@ -28,7 +28,16 @@ public class merge{
         for(int i = 0; i < temp2.length; i++){
             temp2[i] = data[lo+temp1.length + i];
         }
-        for()
+        for(int i = lo, one = 0, two = 0; i <= hi; i++){
+            if (temp1[one]<temp2[two]){
+                data[i]=temp1[one];
+                one++;
+            }
+            else {
+                data[i]=temp2[two];
+                two++;
+            }
+        }
     }
 
     public static void insertionSort(int[] data, int lo, int hi){
